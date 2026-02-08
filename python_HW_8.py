@@ -39,14 +39,14 @@ play_with_str()
 def count_symbol():
 
     text = input("Введите строку: ")
-    sym = input("Введите символ: ")
+    user_sym = input("Введите символ: ")
     count = 0
 
-    for i in text:
-        if i == sym:
+    for sym in text:
+        if sym == user_sym:
             count += 1
 
-    print(f"Символ {sym} встречается {count} раз(а).")
+    print(f"Символ {user_sym} встречается {count} раз(а).")
 
 
 count_symbol()
@@ -59,9 +59,9 @@ def play_with_text():
     text = input("Введите строку: ")
     new_text = ""
 
-    for i in text:
-        if not i.isdigit():
-            new_text += i
+    for sym in text:
+        if not sym.isdigit():
+            new_text += sym
 
     print(f"Результат: {new_text[::-1]}")
 
