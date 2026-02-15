@@ -1,38 +1,37 @@
-import re
-
-
 # task 1
 
 text_1 = "My number is 123-456-789"
-res = ""
 
-for i in text_1:
-    if i.isdigit():
-        res += "*"
-    else:
-        res += i
+res_1 = text_1
 
-print(f"string: {text_1}\nresult: {res}")
+for d in "0123456789":
+    res_1 = res_1.replace(d, "*")
+
+print(f"string: {text_1}\nresult: {res_1}")
+
+
+res_1_1 = text_1.translate(str.maketrans("0123456789", "*" * 10))
+
+print(f"string: {text_1}\nresult: {res_1_1}")
+
 
 # task 2
 
 text = "Programming in python"
 
 for sym in text.lower():
-    count = 0
-    for e in text.lower():
-        if sym == e:
-            count += 1
-    print(f"Символ '{sym}' встречается {count} раз(а)")
+    print(f"Символ '{sym}' встречается {text.count(sym)} раз(а)")
 
 
 # task 3
 
 text_3 = "I have 5 apples and 10 oranges, price is 0.5 each. Card number is ....3672."
 
-def multiply_by_10(match):
-    return str(float(match.group()) * 10)
+list_of_words = text_3.split(" ")
 
-result_3 = re.sub(r'\b\d+(\.\d+)?\b', multiply_by_10, text_3)
+for e in range(len(list_of_words)):
+    element = list_of_words[e]
+    if element[0].isdigit():
+        list_of_words[e] = str(float(element) * 10)
 
-print(result_3)
+print(" ".join(list_of_words))
