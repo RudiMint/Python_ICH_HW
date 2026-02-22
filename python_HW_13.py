@@ -2,15 +2,17 @@
 
 numbers = (3, 7, 2, 8, 5, 10, 1)
 
-new_numbers = tuple()
+new_numbers = []
 
 for i in numbers:
     if not new_numbers:
-        new_numbers += (i,)
+        new_numbers.append(i)
     if i > new_numbers[-1]:
-        new_numbers += (i,)
+        new_numbers.append(i)
 
-print(f"increasing tuple: {new_numbers}")
+new_tuple = tuple(new_numbers)
+
+print(f"increasing tuple: {new_tuple}")
 
 
 # task 2
