@@ -2,7 +2,7 @@
 
 numbers = [4, 7, 3, 7, 8, 3, 4, 2, 7, 3, 8, 4]
 
-new_numbers = sorted(list({i for i in numbers if numbers.count(i) > 1}), reverse=True)
+new_numbers = sorted({i for i in numbers if numbers.count(i) > 1}, reverse=True)
 print(new_numbers)
 
 
