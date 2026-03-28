@@ -8,16 +8,22 @@ orders = [
     {"product": "Chair", "price": 800},
     {"product": "Desk", "price": 400}
 ]
-def sorted_orders(data):
-    result = []
-    for d in data:
-        if d["price"] > 500:
-            result.append(d["product"])
-    return result
+# def sorted_orders(data):
+#     result = []
+#     for d in data:
+#         if d["price"] > 500:
+#             result.append(d["product"])
+#     return result
+#
+# products_list = sorted(sorted_orders(orders), key=lambda x: x[0].lower())
 
-products_list = sorted(sorted_orders(orders), key=lambda x: x[0].lower())
+product_list = sorted(
+    map(lambda x: x["product"],
+        filter(lambda x: x["price"] > 500, orders)),
+    key=lambda x: x[0].lower()
+)
 
-print(products_list)
+print(product_list)
 
 
 # task 2
