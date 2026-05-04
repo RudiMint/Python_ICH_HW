@@ -1,5 +1,6 @@
 import logging
 
+
 logging.basicConfig(
     filename="error.log",
     format="%(asctime)s - %(levelname)s - %(filename)s - %(lineno)d - %(message)s",
@@ -30,10 +31,3 @@ def divide():
 
 print(divide())
 
-# Логирование ошибок
-#
-# Перенаправьте в предыдущей задаче вывод ошибок в файл errors.log в соответствии с форматом ниже.
-#
-# Пример вывода:
-#
-# 2025-02-23 22:38:53,686 - ERROR - test.py - 16 - Ошибка: Введено некорректное число.
