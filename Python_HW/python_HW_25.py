@@ -7,27 +7,31 @@ logging.basicConfig(
     level=logging.ERROR
 )
 
-def divide():
+
+def divide(first, second):
     """
-        Prompts the user to enter two numbers (dividend and divisor),
-        performs division, and handles possible errors.
-
-        Handled exceptions:
-        - ValueError: if the input is not a valid number
-        - ZeroDivisionError: if attempting to divide by zero
-
-        The function keeps asking for input until valid data is provided.
-        After a successful division, it prints the result.
+    Divide two numbers and return the result.
+    Args:
+        first (int | float): The numerator.
+        second (int | float): The denominator.
+    Returns:
+        float: Result of dividing first by second.
     """
-    while True:
-        try:
-            first = int(input("enter first number >>> "))
-            second = int(input("enter second number >>> "))
-            result = first / second
-            return result
-        except (ValueError, ZeroDivisionError) as e:
-            print(f"exception: {e}")
-            logging.error(f"exception: {e}")
+    result = first / second
+    return result
 
-print(divide())
+while True:
+    try:
+        first1 = int(input("enter first number >>> "))
+        second2 = int(input("enter second number >>> "))
 
+        print(divide(first1, second2))
+        break
+
+    except ValueError as e:
+        logging.error(f"Invalid input: {e}")
+        print("Please enter valid integers")
+
+    except ZeroDivisionError as e:
+        logging.error(f"Math error: {e}")
+        print("Cannot divide by zero")
