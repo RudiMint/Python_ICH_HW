@@ -1,26 +1,46 @@
 class Person:
+    """
+    Base class representing a generic person.
+    """
     def __init__(self, name):
         self.name = name
 
     def introduce(self):
-        print(f"Hello, my name is {self.name}")
-
+        """
+        Return a basic introduction message.
+        """
+        return f"Hello, my name is {self.name}"
 class Student(Person):
+    """
+    Represents a student.
+    """
     def __init__(self, name, course):
         super().__init__(name)
         self.course = course
 
     def introduce(self):
-        super().introduce()
-        print(f"I`m on course {self.course}")
+        """
+        Return the student's introduction.
+        """
+        base_intro = super().introduce()
+        return f"{base_intro}\nI'm on course {self.course}"
 
 class Teacher(Person):
+    """
+    Represents a teacher.
+    """
     def __init__(self, name, subject):
         super().__init__(name)
         self.subject = subject
 
     def introduce(self):
-        print(f"Hello, I am professor {self.name}\nMy subject is {self.subject}")
+        """
+        Return the teacher's introduction.
+        """
+        return (
+            f"Hello, I am Professor {self.name}\n"
+            f"My subject is {self.subject}"
+        )
 
 
 people = [
@@ -31,4 +51,4 @@ people = [
           ]
 
 for person in people:
-    person.introduce()
+    print(person.introduce())
