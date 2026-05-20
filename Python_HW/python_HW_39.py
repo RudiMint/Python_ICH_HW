@@ -11,8 +11,10 @@ class Shape(ABC):
     """
     Abstract base class for geometric shapes.
 
-    All subclasses must implement the `area()` method to compute
-    the surface area of the shape.
+    All subclasses must implement the `area()` method.
+
+    Methods:
+        area(): Abstract method that returns the area of the shape.
     """
 
     @abstractmethod
@@ -26,7 +28,10 @@ class Circle(Shape):
     Represents a circle shape.
 
     Attributes:
-        radius (float): The radius of the circle.
+        radius (float): Radius of the circle.
+
+    Methods:
+        area(): Computes and returns the area of the circle.
     """
     def __init__(self, radius):
         self.__validate_size(radius)
@@ -55,6 +60,9 @@ class Rectangle(Shape):
     Attributes:
         height (float): Height of the rectangle.
         width (float): Width of the rectangle.
+
+    Methods:
+        area(): Computes and returns the area of the rectangle.
     """
     def __init__(self, height, width):
         self.__validate_size(height, width)
